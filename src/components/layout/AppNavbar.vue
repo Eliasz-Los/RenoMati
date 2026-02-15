@@ -33,7 +33,7 @@ function go(path: string) {
 
 <template>
   <header class="navbar" aria-label="Primary">
-    <Menubar :model="menuModel" class="navbar__bar">
+    <Menubar v-model:visible="isMobileOpen" :model="menuModel" class="navbar__bar" >
       <template #start>
         <button type="button" class="brand" @click="go('/')">
           <img class="brand__logo" src="/icon-white-blue.png" alt="RenoMati" />

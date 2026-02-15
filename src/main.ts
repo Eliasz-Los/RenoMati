@@ -7,11 +7,11 @@ import router from './router'
 // PrimeVue
 import PrimeVue from 'primevue/config'
 import ToastService from 'primevue/toastservice'
+import Aura from '@primevue/themes/aura'
 
 // PrimeVue styles
 import 'primeflex/primeflex.css'
 import 'primeicons/primeicons.css'
-// import '@primevue/themes/aura/theme.css'
 
 // App global styles
 import './assets/theme.css'
@@ -21,7 +21,16 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 
-app.use(PrimeVue)
+app.use(PrimeVue, {
+  theme: {
+    preset: Aura,
+    options: {
+      prefix: 'p',
+      darkModeSelector: '.my-app-dark',
+      cssLayer: false
+    }
+  }
+})
 app.use(ToastService)
 
 app.mount('#app')

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Button from 'primevue/button'
 import Card from 'primevue/card'
+import WorkTilesSection from "@/components/home/WorkTilesSection.vue";
 </script>
 
 <template>
@@ -26,15 +27,6 @@ import Card from 'primevue/card'
               rounded
               as="router-link"
               to="/contact"
-            />
-            <Button
-              label="Bekijk ons werk"
-              icon="pi pi-arrow-right"
-              severity="secondary"
-              outlined
-              rounded
-              as="router-link"
-              to="/ons-werk/vloerinstallatie"
             />
           </div>
 
@@ -74,8 +66,13 @@ import Card from 'primevue/card'
             />
           </div>
         </div>
+
+
+
+
       </div>
     </div>
+    <WorkTilesSection></WorkTilesSection>
   </section>
 </template>
 
