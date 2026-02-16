@@ -15,6 +15,12 @@ import 'primeicons/primeicons.css'
 
 // App global styles
 import './assets/theme.css'
+import './styles/animation.css'
+import './styles/image.css'
+/*import 'primevue/resources/primevue.min.css'
+*/
+import 'primeicons/primeicons.css'
+
 
 const app = createApp(App)
 

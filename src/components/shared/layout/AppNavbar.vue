@@ -33,7 +33,7 @@ function go(path: string) {
 
 <template>
   <header class="navbar" aria-label="Primary">
-    <Menubar v-model:visible="isMobileOpen" :model="menuModel" class="navbar__bar" >
+    <Menubar :model="menuModel" class="navbar__bar" >
       <template #start>
         <button type="button" class="brand" @click="go('/')">
           <img class="brand__logo" src="/icon-white-blue.png" alt="RenoMati" />
@@ -64,7 +64,13 @@ function go(path: string) {
       </template>
     </Menubar>
 
-    <Drawer v-model:visible="isMobileOpen" position="right" header="Menu" class="navbar__drawer">
+    <Drawer
+      v-model:visible="isMobileOpen"
+      position="right"
+      header="Menu"
+      dismissable
+      modal
+      class="navbar__drawer">
       <nav class="drawer" aria-label="Mobile">
         <Button label="Home" text class="drawer__link" @click="go('/')" />
         <Button label="Over RenoMati" text class="drawer__link" @click="go('/over-renomati')" />
@@ -180,7 +186,12 @@ function go(path: string) {
 /* Responsive: hide desktop menubar list and show burger */
 @media (max-width: 860px) {
   :deep(.p-menubar-root-list) {
-    display: none;
+    /* This way it really hides the desktop navbar*/
+    display: none !important;
+  }
+/*This hides the hamburger button*/
+  :deep(.p-menubar-button){
+    display: none !important;
   }
 
   .navbar__cta {

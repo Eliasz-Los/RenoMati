@@ -1,0 +1,23 @@
+.floor-img {
+  width: 100%;
+  height: auto;
+  max-width: 280px;
+}
+
+@media (min-width: 768px) {
+  .floor-img {
+    max-height: 500px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .floor-img {
+    max-width: 420px;
+  }
+}
+
+.img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}

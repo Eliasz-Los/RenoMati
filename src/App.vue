@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 
-import AppFooter from '@/components/layout/AppFooter.vue'
-import AppNavbar from '@/components/layout/AppNavbar.vue'
+import AppFooter from '@/components/shared/layout/AppFooter.vue'
+import AppNavbar from '@/components/shared/layout/AppNavbar.vue'
 </script>
 
 <template>
