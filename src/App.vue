@@ -9,7 +9,7 @@ import AppNavbar from '@/components/shared/layout/AppNavbar.vue'
   <div class="app ">
     <AppNavbar />
 
-    <main class="app__main ">
+    <main class="app__main">
       <RouterView />
     </main>
 

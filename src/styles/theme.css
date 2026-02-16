@@ -4,9 +4,13 @@
 */
 
 :root {
-  --rm-blue: #1fa6ea;
+  --rm-blue-light: rgba(31, 166, 234, 0.18);
+  --rm-blue-lighter: rgba(31, 166, 234, 0.12);
+  --rm-gradient-start: #ffffff;
+  --rm-gradient-end: #f7fbff;
   --rm-black: #000000;
   --rm-white: #ffffff;
+  --rm-reno-blue: #1fa6ea
 }
 
 html,
@@ -16,10 +20,27 @@ body {
 
 body {
   margin: 0;
-  color: #0b1220;
-  background: #ffffff;
+  min-height: 100%;
+  background:
+    radial-gradient(1200px 400px at 20% 20%, rgba(31,166,234,0.25), transparent 60%),
+    radial-gradient(1000px 400px at 80% 40%, rgba(31,166,234,0.2), transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #e6f0fb 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
+
+@keyframes gradientSweep {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 /* Make PrimeVue focus ring match brand */
 .p-focus,
 .p-inputtext:focus,
@@ -60,7 +81,7 @@ body {
   font-size: 2.8rem;
   font-weight: 400;
   color: #ffffff; /* White text on blue */
-  background: linear-gradient(90deg, #1fa6ea 0%, #0b1220 100%);
+  background: linear-gradient(90deg, #1fa6ea 0%, #048581 100%); /* #0b1220*/
   padding: 0.5rem 1.5rem;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);

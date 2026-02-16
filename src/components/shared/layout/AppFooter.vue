@@ -23,7 +23,7 @@ function go(path: string){
     icon="pi pi-send" iconPos="right" />
   </div>
 
-  <div class="col-4 flex ">
+  <div class="col-4 flex">
       <p> We werken in Antwerpen & Oost-Vlaanderen, andere locatie? geef ons een seintje en contacteer ons voor verdere informatie</p>
   </div>
 </section>

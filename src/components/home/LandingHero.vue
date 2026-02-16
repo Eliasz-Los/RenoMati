@@ -72,16 +72,21 @@ import WorkTilesSection from "@/components/home/WorkTilesSection.vue";
 
       </div>
     </div>
+
     <WorkTilesSection></WorkTilesSection>
+
   </section>
 </template>
 
 <style scoped>
 .hero {
-  background:
+ /* background:
     radial-gradient(900px 280px at 20% 20%, rgba(31, 166, 234, 0.18), transparent 60%),
     radial-gradient(700px 280px at 80% 40%, rgba(31, 166, 234, 0.12), transparent 60%),
-    linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+    linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);*/
+  background: rgba(255, 255, 255, 0.75); /* gradient will show through */
+  border-radius: 12px;
+  padding: 3rem 1rem;
 }
 
 .hero__container {
@@ -148,7 +153,7 @@ import WorkTilesSection from "@/components/home/WorkTilesSection.vue";
 
 .badge__icon {
   font-size: 1.15rem;
-  color: var(--rm-blue);
+  color: var(--rm-reno-blue);
   margin-top: 0.1rem;
 }
 

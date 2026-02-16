@@ -16,22 +16,39 @@
   padding: 6px;
 }
 
+.height-img {
+  height: 70%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  transition: transform .35s ease, box-shadow .35s ease;
+  cursor: pointer;
+}
+
+.height-img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 30px rgb(31, 166, 234);
+}
+
 /*tablet*/
 @media (min-width: 768px) {
   .floor-img {
     max-height: 360px;
+  }
+  .height-img {
+    max-height: 450px;
   }
 }
 
 /*desktop*/
 @media (min-width: 1200px) {
   .floor-img {
-    max-width: 460px;
+    max-width: 550px;
   }
 }
 
-/*.img {
+.img {
   display: block;
   margin: 0 auto;
   border-radius: 10px;
-}*/
+}
