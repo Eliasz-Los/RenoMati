@@ -45,7 +45,7 @@ const bottomCarousel = Object.values(
                     circular
                     :autoplayInterval="3000">
             <template #item="slotProps">
-              <img :src="slotProps.data" class="floor-img"  alt="carousel"/>
+              <img :src="slotProps.data" class="height-img"  alt="carousel"/>
             </template>
           </Carousel>
         </AnimatedSection>
@@ -71,7 +71,7 @@ const bottomCarousel = Object.values(
                     circular
                     :autoplayInterval="3000">
             <template #item="slotProps">
-              <img :src="slotProps.data" class="floor-img"  alt="carousel"/>
+              <img :src="slotProps.data" class="height-img"  alt="carousel"/>
             </template>
           </Carousel>
         </AnimatedSection>

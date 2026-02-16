@@ -76,10 +76,8 @@ body {
 /*Title so its good, clean and modern*/
 
 .reno-title {
- /* display: inline-block;
-  position: relative;*/
-  font-size: 2.8rem;
-  font-weight: 400;
+  font-size: 2.5rem;
+  font-weight: 300;
   color: #ffffff; /* White text on blue */
   background: linear-gradient(90deg, #1fa6ea 0%, #048581 100%); /* #0b1220*/
   padding: 0.5rem 1.5rem;

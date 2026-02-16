@@ -4,6 +4,7 @@ import { useRouter } from 'vue-router'
 import Card from 'primevue/card'
 import Button from 'primevue/button'
 import type {WorkTile} from "@/models/WorkTile.ts";
+import AnimatedSection from "@/components/shared/ui/AnimatedSection.vue";
 
 const router = useRouter()
 
@@ -93,9 +94,7 @@ function goToWork(route: string) {
         :key="tile.route"
         class="col-6 md:col-6 lg:col-6"
       >
-        <Transition
-          appear
-          :name="index % 2 === 0 ? 'slide-left' : 'slide-right'">
+        <AnimatedSection :animation="index % 2 === 0 ? 'slide-left' : 'slide-right'">
 
           <!-- Blue tiles: Just empty blue cards -->
           <Card
@@ -124,7 +123,7 @@ function goToWork(route: string) {
               </div>
             </template>
           </Card>
-        </Transition>
+        </AnimatedSection>
       </div>
     </div>
   </section>
