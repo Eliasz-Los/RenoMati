@@ -1,23 +1,37 @@
 .floor-img {
   width: 100%;
-  height: auto;
-  max-width: 280px;
+  height: 260px; /*mobile height since all the images are way too taal 1840x4000 its thus stetched*/
+  object-fit: cover; /*crop instead of stretch*/
+  border-radius: 12px;
+  display: block;
+  transition: transform .35s ease, box-shadow .35s ease;
+  cursor: pointer;
 }
 
+.floor-img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 30px rgb(31, 166, 234);
+}
+.img-frame {
+  padding: 6px;
+}
+
+/*tablet*/
 @media (min-width: 768px) {
   .floor-img {
-    max-height: 500px;
+    max-height: 360px;
   }
 }
 
+/*desktop*/
 @media (min-width: 1200px) {
   .floor-img {
-    max-width: 420px;
+    max-width: 460px;
   }
 }
 
-.img {
+/*.img {
   display: block;
   margin: 0 auto;
   border-radius: 10px;
-}
+}*/

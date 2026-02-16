@@ -1,0 +1,90 @@
+/*
+  Global theme tweaks for RenoMati.
+  PrimeVue provides the component styling; this file is for small, consistent brand overrides.
+*/
+
+:root {
+  --rm-blue: #1fa6ea;
+  --rm-black: #000000;
+  --rm-white: #ffffff;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: #0b1220;
+  background: #ffffff;
+}
+
+/* Make PrimeVue focus ring match brand */
+.p-focus,
+.p-inputtext:focus,
+.p-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(31, 166, 234, 0.25) !important;
+}
+
+/*cards will be used evrywhere their working is importanttoo keep clients on the website*/
+.rm-card {
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.rm-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.rm-card .p-card-body{
+  padding: 0.6rem;
+}
+
+.rm-card .p-card-content {
+  padding: 0;
+}
+
+.rm-card p {
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+/*Title so its good, clean and modern*/
+
+.reno-title {
+ /* display: inline-block;
+  position: relative;*/
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: #ffffff; /* White text on blue */
+  background: linear-gradient(90deg, #1fa6ea 0%, #0b1220 100%);
+  padding: 0.5rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Optional cinematic underline animation */
+.reno-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 0;
+  height: 4px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  animation: underlineExpand 0.8s ease forwards;
+  animation-delay: 0.6s; /* after main slide */
+}
+
+@keyframes underlineExpand {
+  to {
+    width: 60%;
+  }
+}

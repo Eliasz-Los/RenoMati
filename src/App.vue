@@ -6,10 +6,10 @@ import AppNavbar from '@/components/shared/layout/AppNavbar.vue'
 </script>
 
 <template>
-  <div class="app">
+  <div class="app ">
     <AppNavbar />
 
-    <main class="app__main">
+    <main class="app__main ">
       <RouterView />
     </main>
 
