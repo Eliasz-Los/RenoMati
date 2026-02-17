@@ -55,9 +55,21 @@ body {
   transition: transform .25s ease, box-shadow .25s ease;
 }
 
+.rm-card-spec{
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+
+}
+
 .rm-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  box-shadow: 28px 12px 28px rgba(0,0,0,0.12);
+}
+
+.rm-card-spec:hover{
+  transform: scale(1.06);
+  box-shadow: 0 10px 30px rgb(31, 166, 234);
 }
 
 .rm-card .p-card-body{

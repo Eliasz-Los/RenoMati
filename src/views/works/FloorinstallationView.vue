@@ -5,13 +5,19 @@ const images = Object.values(
     eager: true,
     import: 'default'
   })
-)
+) as string[];
 import pic1 from '@/assets/Floorinstallation/pic1.jpg'
 import pic2 from '@/assets/Floorinstallation/pic2.jpg'
 import Card from 'primevue/card'
 import Carousel from 'primevue/carousel'
+import {ref} from "vue";
+import ImageViewer from "@/components/shared/ui/ImageViewer.vue";
+import FullscreenGallery from "@/components/shared/ui/FullscreenGallery.vue";
 
-console.log(images)
+const viewerImage = ref<string|null>(null);
+const galleryVisible = ref(false);
+const galleryIndex = ref(0);
+
 </script>
 
 <template>
@@ -21,19 +27,16 @@ console.log(images)
   </AnimatedSection>
 
 <!-- First row  -->
-  <section class="grid align-items-center mb-6">
-    <div class="col-12 md:col-4">
+  <section class="grid align-items-center justify-content-center mb-6">
+    <div class="col-12 md:col-4 lg:col-3">
       <AnimatedSection animation="slide-left" :delay="0.15">
-        <Card class="p-3 rm-card">
-          <template #content>
             <img :src="pic1" alt="Badkamer Vloer Tegels"
-                 class="floor-img"/>
-          </template>
-        </Card>
+                 class="floor-img"
+                 @click="viewerImage = pic1"/>
       </AnimatedSection>
     </div>
 
-    <div class="col-12 md:col-4 text-center ">
+    <div class="col-12 md:col-4 lg:col-3 text-center ">
       <AnimatedSection animation="slide-up" :delay="0.25">
         <Card class="p-3 rm-card">
           <template #content>
@@ -42,17 +45,16 @@ console.log(images)
         </Card>
       </AnimatedSection>
     </div>
-    <div class="col-12 md:col-4">
+    <div class="col-12 md:col-4 lg:col-3">
       <AnimatedSection animation="slide-right" :delay="0.4">
-        <Card class="p-3 rm-card">
-          <template #content>
             <img :src="pic2" alt="Badkamer Muur Tegels"
-                 class="floor-img"/>
-          </template>
-        </Card>
+                 class="floor-img"
+                 @click="viewerImage = pic2"/>
+
       </AnimatedSection>
     </div>
   </section>
+
 <!--Second row-->
   <section class="grid align-items-center mb-6">
     <div class="col-12 md:col-6 ">
@@ -72,13 +74,22 @@ console.log(images)
                   circular
                   :autoplayInterval="3000">
           <template #item="slotProps">
-            <img :src="slotProps.data" class="height-img"  alt="carousel"/>
+            <img :src="slotProps.data" class="height-img"  alt="carousel"
+                 @click="galleryIndex = images.indexOf(slotProps.data);
+              galleryVisible = true" />
           </template>
         </Carousel>
       </AnimatedSection>
     </div>
   </section>
 
+  <ImageViewer :src="viewerImage" @close="viewerImage = null"></ImageViewer>
+
+  <FullscreenGallery :images="images"
+                     :startIndex="galleryIndex"
+                     :visible="galleryVisible"
+                     @close="galleryVisible = false"
+  />
 </div>
 
 </template>

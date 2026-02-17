@@ -87,12 +87,8 @@ import pic1 from "@/assets/Floorinstallation/pic1.jpg";
     </div>
     <div class="col-12 md:col-4">
       <AnimatedSection animation="slide-right" :delay="0.15">
-        <Card class="p-3 rm-card">
-          <template #content>
             <img src="@/assets/themanhimself.jpeg" alt="Badkamer Vloer Tegels"
                  class="height-img"/>
-          </template>
-        </Card>
       </AnimatedSection>
     </div>
   </div>

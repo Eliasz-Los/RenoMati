@@ -84,6 +84,7 @@ function goToWork(route: string) {
 }
 </script>
 
+<!--TODO: fix this tile bs-->
 <template>
   <section class="work-section">
     <h2 class="text-3xl font-bold text-center mb-6">Bekijk ons werk!</h2>
@@ -95,66 +96,105 @@ function goToWork(route: string) {
         class="col-6 md:col-6 lg:col-6"
       >
         <AnimatedSection :animation="index % 2 === 0 ? 'slide-left' : 'slide-right'">
-
-          <!-- Blue tiles: Just empty blue cards -->
           <Card
-            v-if="visibleTiles[index] && tile.colorClass === 'blue'"
-            class="work-tile work-tile--blue"
-          />
-
-          <!-- Black tiles: Cards with content -->
-          <Card
-            v-else-if="visibleTiles[index] && tile.colorClass === 'black'"
-            class="work-tile work-tile--black cursor-pointer hover:shadow-6 "
-            @click="goToWork(tile.route)"
+            v-show="visibleTiles[index]"
+          :class="['work-tile', tile.colorClass === 'blue' ? 'work-tile--blue' : 'work-tile--black', tile.colorClass === 'black' ? 'cursor-pointer hover:shadow-6' : '']"
+          @click="tile.colorClass === 'black' ? goToWork(tile.route) : null"
           >
             <template #content>
-              <div class="flex flex-column align-items-center text-center gap-3 p-4">
-                <i :class="[tile.icon, 'text-6xl', 'text-white']"></i>
+              <div v-if="tile.colorClass === 'blue'" class="blue-tile-wrapper">
+                <img src="/black_icon_transparent_background.png" alt="black_renomati_logo" class="blue-tile-logo" />
+              </div>
+              <div v-else class="flex flex-column align-items-center text-center gap-3 p-4">
+                <i :class="[tile.icon, 'text-white']"></i>
                 <h3 class="text-2xl font-bold m-0 text-white">{{ tile.title }}</h3>
                 <p class="text-base m-0 text-white opacity-90">{{ tile.description }}</p>
-                <Button
-                  label="Bekijk meer"
-                  icon="pi pi-arrow-right"
-                  text
-                  severity="secondary"
-                  class="mt-2 text-white"
-                />
+                <Button label="Bekijk meer" icon="pi pi-arrow-right" text severity="secondary" class="mt-2 text-white" />
               </div>
             </template>
           </Card>
         </AnimatedSection>
+
+
       </div>
     </div>
   </section>
 </template>
 
 <style scoped>
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.grid > div {
+  flex: 1 1 calc(50% - 0.5rem); /* 2 columns, accounting for gap */
+  max-width: 400px; /* optional: prevents shrinking too much */
+  min-width: 200px; /* prevent blue tiles from shrinking too much */
+}
+@media (max-width: 600px) {
+  .grid > div {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+
 .work-section {
   padding: 4rem 2rem;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-/* Base tile styling */
+/*base tile */
 .work-tile {
-  height: 100%;
-  min-height: 150px;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* makes all tiles square */
+  max-height: 50vh; /* half viewport height */
   border-radius: 12px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
+
 .work-tile--blue {
-  min-height: 100px;
   background: #1fa6ea;
   border: 1px solid #1fa6ea;
 }
+.blue-tile-wrapper {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blue-tile-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 .work-tile--black {
-  min-height: 240px;
   background: #1a1a1a !important;
   border-color: #1a1a1a !important;
 }
+
+.work-tile--black > :deep(.p-card-content) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  align-items: center;    /* horizontal center */
+  height: 100%;
+  text-align: center;
+  padding: 2rem; /* optional: more spacing around content */
+  gap: 1rem;     /* space between icon, title, description, button */
+}
+
 
 .work-tile--black :deep(.p-card-body),
 .work-tile--black :deep(.p-card-content) {
