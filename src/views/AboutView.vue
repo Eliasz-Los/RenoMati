@@ -47,23 +47,23 @@ import AnimatedSection from "@/components/shared/ui/AnimatedSection.vue";
           </template>
           <template #content>
             <ul>
-              <AnimatedSection animation="slide-down" :delay=0.65>
+              <AnimatedSection animation="slide-down" :delay=0.95>
                 <li>Plaatsen van parket, laminaat, tegels.</li>
               </AnimatedSection>
 
-              <AnimatedSection animation="slide-left" :delay=0.65>
+              <AnimatedSection animation="slide-left" :delay=0.95>
                 <li>Gyprocwerken en Bezettingswerken</li>
               </AnimatedSection>
 
-              <AnimatedSection animation="slide-right" :delay=0.65>
+              <AnimatedSection animation="slide-right" :delay=0.95>
                 <li>Schilderwerken</li>
               </AnimatedSection>
 
-              <AnimatedSection animation="slide-left" :delay=0.65>
+              <AnimatedSection animation="slide-left" :delay=0.95>
                 <li>Ramen en deuren plaatsen</li>
               </AnimatedSection>
 
-              <AnimatedSection animation="slide-right" :delay=0.65>
+              <AnimatedSection animation="slide-right" :delay=0.95>
                 <li>Binnen afbrak werken</li>
               </AnimatedSection>
 
@@ -83,15 +83,15 @@ import AnimatedSection from "@/components/shared/ui/AnimatedSection.vue";
         <template #content>
 
           <ul>
-            <AnimatedSection animation="slide-up" :delay=1.2>
+            <AnimatedSection animation="slide-up" :delay=1.8>
               <li>Goede prijzen</li>
             </AnimatedSection>
 
-            <AnimatedSection animation="slide-left" :delay=1.2>
+            <AnimatedSection animation="slide-left" :delay=1.8>
               <li>Individuele benadering van elke klant</li>
             </AnimatedSection>
 
-            <AnimatedSection animation="slide-right" :delay=1.2>
+            <AnimatedSection animation="slide-right" :delay=1.8>
               <li>Professionele en klantvriendelijke service</li>
             </AnimatedSection>
           </ul>

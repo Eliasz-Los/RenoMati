@@ -14,14 +14,14 @@ const year = new Date().getFullYear()
 <template>
 <section class="container app-footer justify-content-center align-items-center">
 
-  <section class="grid">
+  <section class="grid mt-2">
     <div class="col-12 md:col-4 flex">
       <img src='/black_icon_transparent_background.png'
            alt="black_renomati_logo"
             class="footer-logo"/>
     </div>
 
-    <div class="col-12 md:col-4 flex ">
+    <div class="col-12 md:col-4 flex">
       <Button label="Contacteer ons"
               @click="go('/contact')"
       icon="pi pi-send" iconPos="right" />
@@ -32,7 +32,7 @@ const year = new Date().getFullYear()
     </div>
   </section>
 
-  <section class="grid ">
+  <section class="grid mb-2">
     <div class="col-12 md:col-4 flex">
       <p class="footer-text">RenoMati Copyrighted {{ year }}</p>
     </div>

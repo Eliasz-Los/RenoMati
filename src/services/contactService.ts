@@ -1,5 +1,5 @@
 import axios from 'axios'
-import type {ContactFormData} from "@/models/ContactFormData.ts";
+import type {ContactFormData} from "@/models/contact/ContactFormData.ts";
 // TODO fix email server
 export async function sendContactEmail(data: ContactFormData) {
   try {

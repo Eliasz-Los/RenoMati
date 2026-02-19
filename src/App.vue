@@ -3,6 +3,7 @@ import { RouterView } from 'vue-router'
 
 import AppFooter from '@/components/shared/layout/AppFooter.vue'
 import AppNavbar from '@/components/shared/layout/AppNavbar.vue'
+import Reviews from "@/components/shared/layout/Reviews.vue";
 </script>
 
 <template>
@@ -12,7 +13,7 @@ import AppNavbar from '@/components/shared/layout/AppNavbar.vue'
     <main class="app__main">
       <RouterView />
     </main>
-
+    <Reviews />
     <AppFooter />
   </div>
 </template>

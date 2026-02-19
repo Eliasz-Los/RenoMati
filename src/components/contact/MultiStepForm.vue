@@ -6,7 +6,7 @@ import AddressStep from './AddressStep.vue'
 import WorkStep from './WorkStep.vue'
 import ReviewStep from './ReviewStep.vue'
 import {sendContactEmail} from "@/services/contactService.ts";
-import type {ContactFormData} from "@/models/ContactFormData.ts";
+import type {ContactFormData} from "@/models/contact/ContactFormData.ts";
 
 import Button from "primevue/button"
 import Stepper from "primevue/stepper"

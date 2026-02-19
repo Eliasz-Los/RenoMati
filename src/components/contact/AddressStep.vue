@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import type {Address} from "@/models/Address.ts";
+import type {Address} from "@/models/contact/Address.ts";
 import {computed} from "vue";
 import InputText from "primevue/inputtext"
 

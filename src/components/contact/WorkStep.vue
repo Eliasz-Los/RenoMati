@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {computed} from "vue";
-import type {WorkSpecs} from "@/models/WorkSpecs.ts";
+import type {WorkSpecs} from "@/models/contact/WorkSpecs.ts";
 import {MultiSelect, InputNumber, Textarea} from "primevue";
 
 const props = defineProps<{

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed} from 'vue'
-import type {User} from "@/models/User.ts";
+import type {User} from "@/models/contact/User.ts";
 import InputText from "primevue/inputtext"
 
 const props = defineProps<{

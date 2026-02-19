@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {computed, ref} from 'vue'
 import PrivacyModal from "@/components/contact/PrivacyModal.vue";
-import type {ContactFormData} from "@/models/ContactFormData.ts";
+import type {ContactFormData} from "@/models/contact/ContactFormData.ts";
 import {Checkbox} from "primevue"
 
 const showPrivacy = ref(false)
