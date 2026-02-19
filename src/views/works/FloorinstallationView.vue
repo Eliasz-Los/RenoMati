@@ -39,6 +39,9 @@ const galleryIndex = ref(0);
     <div class="col-12 md:col-4 lg:col-3 text-center ">
       <AnimatedSection animation="slide-up" :delay="0.25">
         <Card class="p-3 rm-card">
+          <template #title>
+            Vloertegels & wandtegels
+          </template>
           <template #content>
             Wij plaatsen vloertegels en wandtegels in verschillende formaten en stijlen. Of het nu gaat om een badkamer, keuken of leefruimte, wij zorgen voor een nauwkeurige plaatsing en een strak resultaat.
           </template>
@@ -57,17 +60,8 @@ const galleryIndex = ref(0);
 
 <!--Second row-->
   <section class="grid align-items-center mb-6">
-    <div class="col-12 md:col-6 ">
-      <AnimatedSection animation="slide-left" >
-        <Card class="p-3 text-center rm-card">
-          <template #content>
-            Parket en laminaat geven uw woning een warme en stijlvolle uitstraling. Wij plaatsen beide vloersoorten nauwkeurig, zodat u een duurzame, nette en egale afwerking krijgt, klaar voor jarenlang woonplezier.
-          </template>
-        </Card>
-      </AnimatedSection>
-    </div>
     <div class="col-12 md:col-6">
-      <AnimatedSection animation="slide-right" :delay="0.25">
+      <AnimatedSection animation="slide-right" :delay="0.8">
         <Carousel :value="images"
                   :num-visible="1"
                   :num-scroll="1"
@@ -81,6 +75,19 @@ const galleryIndex = ref(0);
         </Carousel>
       </AnimatedSection>
     </div>
+    <div class="col-12 md:col-6 ">
+      <AnimatedSection animation="slide-left" :delay="1.2">
+        <Card class="p-3 text-center rm-card">
+          <template #title>
+            Parket & laminaat
+          </template>
+          <template #content>
+            Parket en laminaat geven uw woning een warme en stijlvolle uitstraling. Wij plaatsen beide vloersoorten nauwkeurig, zodat u een duurzame, nette en egale afwerking krijgt, klaar voor jarenlang woonplezier.
+          </template>
+        </Card>
+      </AnimatedSection>
+    </div>
+
   </section>
 
   <ImageViewer :src="viewerImage" @close="viewerImage = null"></ImageViewer>

@@ -1,9 +1,9 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-
+import { plugin, defaultConfig } from '@formkit/vue'
 import App from './App.vue'
 import router from './router'
-
+import '@formkit/themes/genesis'
 // PrimeVue
 import PrimeVue from 'primevue/config'
 import ToastService from 'primevue/toastservice'
@@ -17,9 +17,7 @@ import 'primeicons/primeicons.css'
 import './styles/theme.css'
 import './styles/animation.css'
 import './styles/image.css'
-/*import 'primevue/resources/primevue.min.css'
-*/
-import 'primeicons/primeicons.css'
+
 
 
 const app = createApp(App)
@@ -38,5 +36,6 @@ app.use(PrimeVue, {
   }
 })
 app.use(ToastService)
-
+/* FormKit*/
+app.use(plugin, defaultConfig)
 app.mount('#app')

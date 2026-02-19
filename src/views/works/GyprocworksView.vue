@@ -27,12 +27,12 @@ const allImages = [...topCarousel, ...bottomCarousel]
 
 <template>
   <div class="container m-2">
-    <AnimatedSection animation="slide-down" :delay="0.15" >
+    <AnimatedSection animation="slide-down" :delay="0.2" >
       <h2 class="text-center reno-title">Gyproc- & Bezettingswerken </h2>
     </AnimatedSection>
 <!--Top Row-->
     <section class="grid align-items-center justify-content-center mb-6">
-      <div class="col-12 md:col-6 lg:col-8">
+      <div class="col-12 md:col-6">
         <AnimatedSection animation="slide-left" >
           <Card class="p-3 text-center rm-card">
             <template #title>
@@ -45,8 +45,8 @@ const allImages = [...topCarousel, ...bottomCarousel]
           </Card>
         </AnimatedSection>
       </div>
-      <div class="col-12 md:col-6 lg:col-8">
-        <AnimatedSection animation="slide-right" :delay="0.5">
+      <div class="col-12 md:col-6">
+        <AnimatedSection animation="slide-right" :delay="0.4">
           <Carousel :value="topCarousel"
                     :num-visible="1"
                     :num-scroll="1"
@@ -63,21 +63,11 @@ const allImages = [...topCarousel, ...bottomCarousel]
     </section>
 <!--Bottom Row-->
 
+
     <section class="grid align-items-center justify-content-center mb-6">
-      <div class="col-12 md:col-6 lg:col-8">
-        <AnimatedSection animation="slide-left" >
-          <Card class="p-3 text-center rm-card">
-            <template #title>
-              Het professioneel plamuren van wanden en plafonds is een belangrijke stap voor een perfect eindresultaat.
-            </template>
-            <template #content>
-              Door een zorgvuldige en gladde afwerking worden alle oppervlakken volledig egaal gemaakt en klaar voor schilder- of behangwerken. Zo krijgt u een strakke uitstraling zonder zichtbare naden, scheurtjes of oneffenheden.
-            </template>
-          </Card>
-        </AnimatedSection>
-      </div>
-      <div class="col-12 md:col-6 lg:col-8">
-        <AnimatedSection animation="slide-right" :delay="0.5">
+
+      <div class="col-12 md:col-6">
+        <AnimatedSection animation="slide-right" :delay="0.8">
           <Carousel :value="bottomCarousel"
                     :num-visible="1"
                     :num-scroll="1"
@@ -91,6 +81,20 @@ const allImages = [...topCarousel, ...bottomCarousel]
           </Carousel>
         </AnimatedSection>
       </div>
+
+      <div class="col-12 md:col-6">
+        <AnimatedSection animation="slide-left"  :delay="1.6">
+          <Card class="p-3 text-center rm-card">
+            <template #title>
+              Het professioneel plamuren van wanden en plafonds is een belangrijke stap voor een perfect eindresultaat.
+            </template>
+            <template #content>
+              Door een zorgvuldige en gladde afwerking worden alle oppervlakken volledig egaal gemaakt en klaar voor schilder- of behangwerken. Zo krijgt u een strakke uitstraling zonder zichtbare naden, scheurtjes of oneffenheden.
+            </template>
+          </Card>
+        </AnimatedSection>
+      </div>
+
     </section>
 
 <!-- Image viewer trough a gallery -->

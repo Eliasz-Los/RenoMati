@@ -25,20 +25,24 @@ const galleryIndex = ref(0);
 
 
     <section class="grid align-items-center justify-content-center mb-6">
-      <div class="col-12 md:col-6 lg:col-8">
+      <div class="col-12 md:col-6 lg:col-6">
         <AnimatedSection animation="slide-left" :delay="0.5">
           <Card class="p-3 text-center rm-card">
             <template #title>
-              Wij zijn gespecialiseerd in gyprocwerken en bezettingswerken voor zowel nieuwbouw als renovatie.
+              Bent u op zoek naar een betrouwbare vakman voor het plaatsen van ramen en deuren? Dan bent u bij ons aan het juiste adres.
             </template>
             <template #content>
-              Wij plaatsen gyprocwanden en plafonds en zorgen voor strak en glad pleisterwerk.
-              Met oog voor detail en kwaliteit leveren wij een nette, duurzame afwerking die volledig klaar is voor schilder- of verdere afwerkingswerken.
+                <p>Wij verzorgen de professionele montage van ramen en deuren,.
+                  zowel binnen als buiten. Met oog voor elk detail zorgen wij voor een perfecte plaatsing,
+                  een uitstekende afdichting en een strakke, esthetische afwerking </p>
+                <p>Dankzij onze jarenlange ervaring en het gebruik van hoogwaardige materialen bent u verzekerd van kwaliteit die jarenlang meegaat.
+                  Geen problemen met slecht sluitende deuren, tocht, lekken of verlies van isolatie — wij leveren werk waarop u kunt vertrouwen. </p>
+              <p>Kies voor zekerheid, duurzaamheid en vakmanschap. </p>
             </template>
           </Card>
         </AnimatedSection>
       </div>
-      <div class="col-12 md:col-6 lg:col-8">
+      <div class="col-12 md:col-6 lg:col-6">
         <AnimatedSection animation="slide-right" :delay="0.5">
           <Carousel :value="windowsAndDoorPics"
                     :num-visible="1"

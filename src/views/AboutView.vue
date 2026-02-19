@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import Card from "primevue/card";
 import AnimatedSection from "@/components/shared/ui/AnimatedSection.vue";
-import pic1 from "@/assets/Floorinstallation/pic1.jpg";
 
 </script>
-
+<!--TODO veel te saai en lelijk-->
 <template>
 <div class="container m-2">
   <AnimatedSection animation="slide-down">
@@ -12,14 +11,22 @@ import pic1 from "@/assets/Floorinstallation/pic1.jpg";
   </AnimatedSection>
 
 <!-- INFO -->
-  <div class="grid ">
-    <div class="col-12 md:col-8">
-
-      <AnimatedSection animation="slide-left" :delay=0.1>
+  <section class="grid ">
+    <div class="col-12 md:col-4 lg:col-3">
+      <AnimatedSection animation="slide-left" :delay="0.2">
+        <img src="@/assets/themanhimself.jpeg" alt="the owner"
+             class="floor-img"/>
+      </AnimatedSection>
+    </div>
+  <!--   Over renomati -->
+    <div class="col-12 md:col-8 lg:col-9">
+      <AnimatedSection animation="slide-right" :delay=0.4>
         <Card class="m-2 rm-card">
+          <template #title>
+            <h3> Renovatie werk op maat op kleine en grote schaal.</h3>
+          </template>
           <template #content>
-            <p>
-              We zijn een renovatiebedrijf die kleine als grote renovatiewerkzaamheden en afwerkingswerkzaamheden omvat.
+            <p>              We zijn een renovatiebedrijf die kleine als grote renovatiewerkzaamheden en afwerkingswerkzaamheden omvat.
             </p>
             <p>
               Neem contact op om gratis offerte te krijgen.
@@ -30,12 +37,16 @@ import pic1 from "@/assets/Floorinstallation/pic1.jpg";
           </template>
         </Card>
       </AnimatedSection>
+    </div>
 
-      <!--Werkzaamheden-->
-      <AnimatedSection animation="slide-right" :delay=0.4>
+    <!--Werkzaamheden-->
+    <div class="col-12 md:col-6">
+      <AnimatedSection animation="slide-right" :delay=0.8>
         <Card class="m-2 rm-card">
+          <template #title>
+            We voeren werkzaamheden uit zoals:
+          </template>
           <template #content>
-            <h4>We voeren werkzaamheden uit zoals:</h4>
             <ul>
               <AnimatedSection animation="slide-down" :delay=0.65>
                 <li>Plaatsen van parket, laminaat, tegels.</li>
@@ -61,37 +72,35 @@ import pic1 from "@/assets/Floorinstallation/pic1.jpg";
           </template>
         </Card>
       </AnimatedSection>
-
-      <!-- Voordelen  -->
-      <AnimatedSection animation="slide-left" :delay=0.8>
-        <Card class="m-2 rm-card">
-          <template #content>
-            <h4>Voordelen van RenoMati te verkiezen?</h4>
-            <ul>
-              <AnimatedSection animation="slide-up" :delay=1.2>
-                <li>Goede prijzen</li>
-              </AnimatedSection>
-
-              <AnimatedSection animation="slide-left" :delay=1.2>
-                <li>Individuele benadering van elke klant</li>
-              </AnimatedSection>
-
-              <AnimatedSection animation="slide-right" :delay=1.2>
-                <li>Professionele en klantvriendelijke service</li>
-              </AnimatedSection>
-            </ul>
-          </template>
-        </Card>
-      </AnimatedSection>
-
     </div>
-    <div class="col-12 md:col-4">
-      <AnimatedSection animation="slide-right" :delay="0.15">
-            <img src="@/assets/themanhimself.jpeg" alt="Badkamer Vloer Tegels"
-                 class="height-img"/>
-      </AnimatedSection>
+
+    <!-- Voordelen  -->
+    <div class="col-12 md:col-6">
+      <AnimatedSection animation="slide-left" :delay=1.6>
+      <Card class="m-2 rm-card">
+        <template #title>
+          Voordelen van RenoMati te verkiezen?
+        </template>
+        <template #content>
+
+          <ul>
+            <AnimatedSection animation="slide-up" :delay=1.2>
+              <li>Goede prijzen</li>
+            </AnimatedSection>
+
+            <AnimatedSection animation="slide-left" :delay=1.2>
+              <li>Individuele benadering van elke klant</li>
+            </AnimatedSection>
+
+            <AnimatedSection animation="slide-right" :delay=1.2>
+              <li>Professionele en klantvriendelijke service</li>
+            </AnimatedSection>
+          </ul>
+        </template>
+      </Card>
+    </AnimatedSection>
     </div>
-  </div>
+  </section>
 
 
 </div>

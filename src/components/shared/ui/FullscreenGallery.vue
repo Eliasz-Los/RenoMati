@@ -32,6 +32,11 @@ function wheelZoom(e: WheelEvent){
   if (zoomLevel.value < 1) zoomLevel.value = 1;
 }
 </script>
+<!-- TODO: 1. je moet terug kunnen gaan
+  2. miss fotos beetje uitstretchen
+  3. meer advanced functies toevoegen miss
+   4. close button moet kunnen door die altijd te zien en miss achtergrond in rood?
+   5. je moet kunnen kiezen op basis van je muis waar je inzoomt-->
 
 <template>
   <Galleria

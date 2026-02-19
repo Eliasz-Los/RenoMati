@@ -37,7 +37,6 @@ function go(path: string) {
       <template #start>
         <button type="button" class="brand" @click="go('/')">
           <img class="brand__logo" src="/icon-white-blue.png" alt="RenoMati" />
-          <span class="brand__name">RenoMati</span>
         </button>
       </template>
 
