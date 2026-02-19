@@ -1,5 +1,4 @@
-<!--TODO: Veel reviews toevoege over het hele app boven de footer natuurlijk-->
-
+<!--TODO; mobile review scaling-->
 <script setup lang="ts">
 import Card from "primevue/card";
 import Carousel from "primevue/carousel";
