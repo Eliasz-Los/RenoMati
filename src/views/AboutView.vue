@@ -6,10 +6,9 @@ import AnimatedText from "@/components/shared/ui/AnimatedText.vue";
 </script>
 <template>
 <div class="container m-2">
-
+  <!-- Title   -->
   <section class="hero">
     <img src="@/assets/About/title_renovation.jpg" alt="renovation background" class="hero__img"/>
-    <!-- Title overlay   -->
     <div class="hero__overlay">
       <AnimatedSection animation="fade-in" :delay="0.2">
         <h2 class="text-center hero__title">
@@ -121,48 +120,5 @@ import AnimatedText from "@/components/shared/ui/AnimatedText.vue";
 
 <style scoped>
 
-.hero {
-  position: relative;
-
-  /* force full viewport width even inside centered container */
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.hero__img {
-  width: 100%;
-  height: clamp(220px, 35vw, 420px);
-  object-fit: cover;
-  display: block;
-}
-
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-
-  /* subtle readability layer */
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,.35),
-    rgba(0,0,0,.25)
-  );
-}
-
-.hero__title {
-  margin: 0;
-  color: #fff;
-  font-weight: 900;
-  text-align: center;
-  font-size: clamp(1.6rem, 3.5vw, 3rem);
-  text-shadow: 0 8px 20px rgba(0,0,0,.35);
-}
 
 </style>

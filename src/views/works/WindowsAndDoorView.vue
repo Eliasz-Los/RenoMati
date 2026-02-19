@@ -5,6 +5,7 @@ import Carousel from "primevue/carousel";
 import Card from "primevue/card";
 import FullscreenGallery from "@/components/shared/ui/FullscreenGallery.vue";
 import {ref} from "vue";
+import AnimatedText from "@/components/shared/ui/AnimatedText.vue";
 
 const windowsAndDoorPics = Object.values(
   import.meta.glob('@/assets/WindowsAndDoors/carousel/*',{
@@ -19,12 +20,21 @@ const galleryIndex = ref(0);
 
 <template>
   <div class="container m-2">
-    <AnimatedSection animation="slide-down" :delay="0.15" >
-      <h2 class="text-center reno-title">Ramen & Deuren </h2>
-    </AnimatedSection>
+    <section class="hero">
+      <img src="@/assets/WindowsAndDoors/main_windows.jpg"
+           alt ='windows with mountain background from Martin Woortman'
+           class="hero__img" />
+      <div class="hero__overlay">
+        <AnimatedSection animation="fade-in" :delay="0.2">
+          <h2 class="text-center hero__title">
+            <AnimatedText text="Ramen & Deuren" :base-delay="0.2" :stagger="0.1"/>
+          </h2>
+        </AnimatedSection>
+      </div>
+    </section>
 
 
-    <section class="grid align-items-center justify-content-center mb-6">
+    <section class="grid align-items-center justify-content-center mb-6 mt-2">
       <div class="col-12 md:col-6 lg:col-6">
         <AnimatedSection animation="slide-left" :delay="0.5">
           <Card class="p-3 text-center rm-card">

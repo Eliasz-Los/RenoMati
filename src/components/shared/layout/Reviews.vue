@@ -16,7 +16,7 @@ const reviews = ref<Review[]>([
     rating : 10.0,
     title : "Herstelling pleisterwerk",
     author : "Koen",
-    dataOfReview : new Date("2024-09-12"),
+    dataOfReview : new Date("2025-09-12"),
     reviewContent : {
       content : "RenoMati heeft voor mij een herstelling aan pleisterwerk uitgevoerd. De herstelling is goed uitgevoerd en er is proper gewerkt - belangrijk in een ruimte die bewoond is. Bovendien verliep de communicatie met Mateusz vlot en is het werk uitgevoerd aan een scherpe prijs.",
         quality : 10,
@@ -30,7 +30,7 @@ const reviews = ref<Review[]>([
     rating : 10.0,
     title : "De ramen waren snel en goed gemaakt.",
     author : "Iwona Los",
-    dataOfReview : new Date("2024-08-02"),
+    dataOfReview : new Date("2025-08-02"),
     reviewContent : {
       content : "Solide werk. Ik raad RenoMati aan voor iedereen die op zoek is naar een betrouwbare vakman voor het plaatsen van ramen en deuren. De communicatie verliep vlot en de prijs-kwaliteitverhouding was uitstekend.",
         quality : 10,

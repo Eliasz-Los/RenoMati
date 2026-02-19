@@ -22,7 +22,7 @@ const menuModel = computed(() => [
       { label: 'Ramen & Deuren', command: () => router.push('/ons-werk/ramen-deuren') },
     ],
   },
-  { label: 'Contact', command: () => router.push('/contact') },
+  // { label: 'Contact', command: () => router.push('/contact') },
 ])
 
 function go(path: string) {

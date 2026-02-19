@@ -5,6 +5,7 @@ import Carousel from "primevue/carousel";
 import Card from "primevue/card";
 import FullscreenGallery from "@/components/shared/ui/FullscreenGallery.vue";
 import {ref} from "vue";
+import AnimatedText from "@/components/shared/ui/AnimatedText.vue";
 
 const topCarousel = Object.values(
   import.meta.glob('@/assets/Gyprocworks/TopCarousel/*',{
@@ -27,11 +28,21 @@ const allImages = [...topCarousel, ...bottomCarousel]
 
 <template>
   <div class="container m-2">
-    <AnimatedSection animation="slide-down" :delay="0.2" >
-      <h2 class="text-center reno-title">Gyproc- & Bezettingswerken </h2>
-    </AnimatedSection>
+
+    <section class="hero">
+      <img src="@/assets/Gyprocworks/main_plaster_board.jpg"
+           alt="plasterboards from Brian Wangenheim" class="hero__img"/>
+      <div class="hero__overlay">
+        <AnimatedSection animation="fade-in" :delay="0.2">
+          <h2 class="text-center hero__title">
+            <AnimatedText text="Gyproc- & Bezettingswerken" :base-delay="0.2" :stagger="0.1"/>
+          </h2>
+        </AnimatedSection>
+      </div>
+    </section>
+
 <!--Top Row-->
-    <section class="grid align-items-center justify-content-center mb-6">
+    <section class="grid align-items-center justify-content-center mb-6 mt-2">
       <div class="col-12 md:col-6">
         <AnimatedSection animation="slide-left" >
           <Card class="p-3 text-center rm-card">

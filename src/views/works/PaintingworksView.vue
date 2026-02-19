@@ -3,6 +3,7 @@
 import AnimatedSection from "@/components/shared/ui/AnimatedSection.vue";
 import Carousel from "primevue/carousel";
 import Card from "primevue/card";
+import AnimatedText from "@/components/shared/ui/AnimatedText.vue";
 
 const paintingsPics = Object.values(
   import.meta.glob('@/assets/Paintingsworks/carousel/*',{
@@ -15,11 +16,21 @@ const paintingsPics = Object.values(
 
 <template>
   <div class="container m-2">
-    <AnimatedSection animation="slide-down" :delay="0.15" >
-      <h2 class="text-center reno-title">Schilderwerken </h2>
-    </AnimatedSection>
 
-    <section class="grid align-items-center justify-content-center mb-6">
+    <section class="hero">
+      <img src="@/assets/Paintingsworks/main_paintingworks.jpg"
+      alt="painting background from R Mo"
+      class="hero__img"/>
+      <div class="hero__overlay">
+        <AnimatedSection animation="fade-in" :delay="0.2">
+          <h2 class="text-center hero__title">
+            <AnimatedText text="Schilderwerken" :base-delay="0.2" :stagger="0.1"/>
+          </h2>
+        </AnimatedSection>
+      </div>
+    </section>
+
+    <section class="grid align-items-center justify-content-center mb-6 mt-2">
       <div class="col-12 md:col-12 lg:col-8">
         <AnimatedSection animation="slide-left" >
           <Card class="p-3 text-center rm-card">
