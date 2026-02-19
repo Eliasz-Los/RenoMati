@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import MultiStepForm from '@/components/contact/MultiStepForm.vue'
 </script>
-<!-- TODO deze view nog implementeren zelfs je meot kunnen contacteren, asap !!!-->
 
 <template>
 <section class="container my-4">

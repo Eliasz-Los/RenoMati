@@ -14,20 +14,6 @@ const tiles = ref<WorkTile[]>([
     description: 'Professionele vloerinstallaties voor uw project',
     icon: 'pi pi-th-large',
     route: '/ons-werk/vloerinstallatie',
-    colorClass: 'black',
-  },
-  {
-    title: '',
-    description: '',
-    icon: '',
-    route: '',
-    colorClass: 'blue',
-  },
-  {
-    title: '',
-    description: '',
-    icon: '',
-    route: '',
     colorClass: 'blue',
   },
   {
@@ -45,25 +31,11 @@ const tiles = ref<WorkTile[]>([
     colorClass: 'black',
   },
   {
-    title: '',
-    description: '',
-    icon: '',
-    route: '',
-    colorClass: 'blue',
-  },
-  {
-    title: '',
-    description: '',
-    icon: '',
-    route: '',
-    colorClass: 'blue',
-  },
-  {
     title: 'Ramen & Deuren',
     description: 'Installatie van ramen en deuren op maat',
     icon: 'pi pi-box',
     route: '/ons-werk/ramen-deuren',
-    colorClass: 'black',
+    colorClass: 'blue',
   },
 
 ])
@@ -84,7 +56,6 @@ function goToWork(route: string) {
 }
 </script>
 
-<!--TODO: fix this tile bs-->
 <template>
   <section class="work-section">
     <h2 class="text-3xl font-bold text-center mb-6">Bekijk ons werk!</h2>
@@ -98,17 +69,20 @@ function goToWork(route: string) {
         <AnimatedSection :animation="index % 2 === 0 ? 'slide-left' : 'slide-right'">
           <Card
             v-show="visibleTiles[index]"
-          :class="['work-tile', tile.colorClass === 'blue' ? 'work-tile--blue' : 'work-tile--black', tile.colorClass === 'black' ? 'cursor-pointer hover:shadow-6' : '']"
-          @click="tile.colorClass === 'black' ? goToWork(tile.route) : null"
+          :class="['work-tile', tile.colorClass === 'blue' ? 'work-tile--blue' : 'work-tile--black', 'cursor-pointer hover:shadow-6']"
+          @click= "goToWork(tile.route)"
           >
             <template #content>
-              <div v-if="tile.colorClass === 'blue'" class="blue-tile-wrapper">
-                <img src="/black_icon_transparent_background.png" alt="black_renomati_logo" class="blue-tile-logo" />
+              <div v-if="tile.colorClass === 'blue'" class="flex flex-column align-items-center text-center gap-3">
+                <i :class="[tile.icon, 'text-black']"></i>
+                <h3 class="text-2xl font-bold m-0 text-black">{{ tile.title }}</h3>
+                <p class="text-black">{{ tile.description }}</p>
+                <Button label="Bekijk meer" icon="pi pi-arrow-right" text severity="primary" class="mt-2 text-black" />
               </div>
-              <div v-else class="flex flex-column align-items-center text-center gap-3 p-4">
+              <div v-else class="flex flex-column align-items-center text-center gap-3">
                 <i :class="[tile.icon, 'text-white']"></i>
                 <h3 class="text-2xl font-bold m-0 text-white">{{ tile.title }}</h3>
-                <p class="text-base m-0 text-white opacity-90">{{ tile.description }}</p>
+                <p class=" text-white">{{ tile.description }}</p>
                 <Button label="Bekijk meer" icon="pi pi-arrow-right" text severity="secondary" class="mt-2 text-white" />
               </div>
             </template>
@@ -151,34 +125,49 @@ function goToWork(route: string) {
 
 /*base tile */
 .work-tile {
-  width: 100%;
-  aspect-ratio: 1 / 1; /* makes all tiles square */
-  max-height: 50vh; /* half viewport height */
   border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
+.work-tile i {
+  transition: transform .4s ease;
+}
 
+.work-tile:hover i {
+  transform: scale(2);
+}
+
+
+/*BLUE tile*/
 .work-tile--blue {
   background: #1fa6ea;
   border: 1px solid #1fa6ea;
 }
-.blue-tile-wrapper {
-  flex: 1 1 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.work-tile--blue :deep(.p-card-body),
+.work-tile--blue :deep(.p-card-content) {
+  background: #1fa6ea !important;
 }
 
-.blue-tile-logo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.work-tile--blue:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  cursor: pointer;
 }
 
+.work-tile--blue :deep(h3),
+.work-tile--blue :deep(p),
+.work-tile--blue :deep(.p-card-content),
+.work-tile--blue :deep(.p-button) {
+  color: black !important;
+}
 
+.work-tile--blue :deep(.p-button:hover) {
+  background: rgb(116, 190, 248) !important;
+}
+
+/*BLACK Tile*/
 .work-tile--black {
   background: #1a1a1a !important;
   border-color: #1a1a1a !important;
@@ -195,7 +184,6 @@ function goToWork(route: string) {
   gap: 1rem;     /* space between icon, title, description, button */
 }
 
-
 .work-tile--black :deep(.p-card-body),
 .work-tile--black :deep(.p-card-content) {
   background: #1a1a1a !important;
@@ -206,55 +194,14 @@ function goToWork(route: string) {
   box-shadow: 0 20px 40px rgba(0,0,0,0.25);
   cursor: pointer;
 }
-
-.work-tile i {
-  transition: transform .4s ease;
-}
-
-.work-tile:hover i {
-  transform: scale(1.15);
-}
-
-/*SLIDE ANIMATION*/
-.slide-left-enter-active,
-.slide-right-enter-active {
-  transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-/* Slide from left */
-
-.slide-left-enter-from {
-  opacity: 0;
-  transform: translateX(-120px) scale(0.96);
-}
-
-.slide-left-enter-to {
-  opacity: 1;
-  transform: translateX(0) scale(1);
-}
-
-/* Slide from right */
-
-
-.slide-right-enter-from {
-  opacity: 0;
-  transform: translateX(120px) scale(0.96);
-}
-
-.slide-right-enter-to {
-  opacity: 1;
-  transform: translateX(0) scale(1);
-}
-
-
-/* Button hover effect */
-.work-tile :deep(.p-button) {
+.work-tile--black :deep(.p-button) {
   color: white !important;
 }
 
-.work-tile :deep(.p-button:hover) {
+.work-tile--black :deep(.p-button:hover) {
   background: rgba(255, 255, 255, 0.1) !important;
 }
+
 
 /* Mobile adjustments */
 @media (max-width: 768px) {

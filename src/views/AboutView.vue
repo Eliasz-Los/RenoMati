@@ -3,7 +3,6 @@ import Card from "primevue/card";
 import AnimatedSection from "@/components/shared/ui/AnimatedSection.vue";
 
 </script>
-<!--TODO veel te saai en lelijk-->
 <template>
 <div class="container m-2">
   <AnimatedSection animation="slide-down">
