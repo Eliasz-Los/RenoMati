@@ -7,5 +7,5 @@ export interface Review {
   title: string;
   author: string;
   dataOfReview: Date;
-  reviewContent: ReviewContent;
+  reviewContent?: ReviewContent;
 }

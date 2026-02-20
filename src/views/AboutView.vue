@@ -23,8 +23,8 @@ import AnimatedText from "@/components/shared/ui/AnimatedText.vue";
   <section class="grid mt-2">
     <div class="col-12 md:col-4 lg:col-3">
       <AnimatedSection animation="slide-left" :delay="0.2">
-        <img src="@/assets/themanhimself.jpeg" alt="the owner"
-             class="floor-img"/>
+        <img rel="preload" src="@/assets/themanhimself.jpeg" alt="the owner"
+             class="floor-img" fetchpriority="high"/>
       </AnimatedSection>
     </div>
   <!--   Over renomati -->

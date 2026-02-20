@@ -25,8 +25,8 @@ const galleryIndex = ref(0);
 <div class="container m-2">
 
   <section class="hero">
-    <img src="@/assets/Floorinstallation/main_tiles.jpg"
-         alt="tiles in compact manner" class="hero__img"/>
+    <img rel="preload" src="@/assets/Floorinstallation/main_tiles.jpg"
+         alt="tiles in compact manner" class="hero__img" fetchpriority="high"/>
     <div class="hero__overlay">
       <AnimatedSection animation="fade-in" :delay="0.2">
         <h2 class="text-center hero__title">

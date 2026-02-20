@@ -1,4 +1,3 @@
-<!--TODO; mobile review scaling-->
 <script setup lang="ts">
 import Card from "primevue/card";
 import Carousel from "primevue/carousel";
@@ -38,7 +37,85 @@ const reviews = ref<Review[]>([
         priceQualityRatio : 10,
         sourceUrl: "https://www.homedeal.be/nl/pro/OdP3G/renomati/#reviews"
     }
-  }
+  },
+  {
+    platform : PlatformType.RingTwice,
+    rating : 10.0,
+    title : "Schilderen traphal.",
+    author : "Eva D.",
+    dataOfReview : new Date("2021-11-13"),
+    reviewContent : {
+      content : "Stipte persoon, mooi werk",
+      sourceUrl: "https://ringtwice.be/nl/service_providers/165807?sem_category=1&similar_sps=68261,66420,305066,261996,477443"
+    }
+  },
+  {
+    platform : PlatformType.RingTwice,
+    rating : 10.0,
+    title : "Schilderen schrijnwerk appartement.",
+    author : "Sophie Y.",
+    dataOfReview : new Date("2022-10-23"),
+    reviewContent : {
+      content : "Mateusz heeft ons heel goed geholpen. Lieve jongen en erg bekwaam. We gaan zeker nog beroep doen op hem.",
+      sourceUrl: "https://ringtwice.be/nl/service_providers/165807?sem_category=1&similar_sps=68261,66420,305066,261996,477443"
+    }
+  },
+  {
+    platform : PlatformType.RingTwice,
+    rating : 10.0,
+    title : "Klusjes binnehuis",
+    author : "Olivier C.",
+    dataOfReview : new Date("2023-01-25"),
+    reviewContent : {
+      content : "Zeer correct qua timing en alle afspraken nageleefd!",
+      sourceUrl: "https://ringtwice.be/nl/service_providers/165807?sem_category=1&similar_sps=68261,66420,305066,261996,477443"
+    }
+  },
+  {
+    platform : PlatformType.RingTwice,
+    rating : 10.0,
+    title : "Trap schilderen & kleine afwerking.",
+    author : "Jean-Philippe G.",
+    dataOfReview : new Date("2023-02-18"),
+    reviewContent : {
+      content : "Punctueel, correct, zeer communicatief en levert zeergoed werk. " +
+        "Ik raad hem absoluut aan en doe nog beroep op hem indien nodig.",
+      sourceUrl: "https://ringtwice.be/nl/service_providers/165807?sem_category=1&similar_sps=68261,66420,305066,261996,477443"
+    }
+  },
+  {
+    platform : PlatformType.RingTwice,
+    rating : 10.0,
+    title : "Schilderwerken muren, radiatoren enz.",
+    author : "Mirelle G.",
+    dataOfReview : new Date("2023-05-22"),
+    reviewContent : {
+      content : "Mateusz reageer snel en vlotte en correcte communicatie.",
+      sourceUrl: "https://ringtwice.be/nl/service_providers/165807?sem_category=1&similar_sps=68261,66420,305066,261996,477443"
+    }
+  },
+  {
+    platform : PlatformType.RingTwice,
+    rating : 10.0,
+    title : "Schilderwerken.",
+    author : "K. M.",
+    dataOfReview : new Date("2023-09-19"),
+    reviewContent : {
+      content : "Zéér vriendelijk - correct - stipt en timing in lijn met verwachting. Aanrader!",
+      sourceUrl: "https://ringtwice.be/nl/service_providers/165807?sem_category=1&similar_sps=68261,66420,305066,261996,477443"
+      }
+    },
+    {
+      platform : PlatformType.RingTwice,
+      rating : 10.0,
+      title : "Schilder.",
+      author : "S R.",
+      dataOfReview : new Date("2023-11-06"),
+      reviewContent : {
+        content : "Mooi en netjes, heel tevreden!",
+        sourceUrl: "https://ringtwice.be/nl/service_providers/165807?sem_category=1&similar_sps=68261,66420,305066,261996,477443"
+      }
+    }
 ])
 
 const platformCount = computed(() => {
@@ -84,7 +161,7 @@ function openExternal(url?: string) {
 </script>
 
 <template>
-  <section class="reviews-section">
+  <section class="container col-12 reviews-section">
     <div class="reviews-head">
       <h2 class="reviews-title">Wat klanten zeggen</h2>
       <p class="reviews-subtitle">
@@ -92,58 +169,65 @@ function openExternal(url?: string) {
       </p>
     </div>
 
-    <!-- Trust strip -->
-    <div
-      class="surface-card border-1 border-200 border-round-xl p-3 md:p-4 mb-4
-         flex flex-column md:flex-row align-items-start md:align-items-center
-         justify-content-between gap-3"
-    >
-      <!-- Left: rating -->
-      <div class="flex align-items-center gap-3">
-        <div class="text-4xl font-bold line-height-1">{{ avg10.toFixed(1) }}</div>
 
-        <div class="flex flex-column gap-1">
-          <div class="flex gap-1" aria-hidden="true">
-            <i
-              v-for="i in 5"
-              :key="i"
-              :class="[
-            'pi',
-            i <= Math.round(avg5) ? 'pi-star-fill' : 'pi-star',
-            'text-900'
-          ]"
-            />
+<!--TRUST STRIP-->
+    <Card class="rm-card-spec flex-column">
+      <template #content>
+        <div class="flex flex-column md:flex-row md:align-items-center justify-content-between gap-3">
+
+        <!-- Left: rating -->
+<!--   flex column instead of grid since everything is on 1 row     -->
+            <!-- LEFT     Rating     -->
+          <div class="flex align-items-center">
+            <div class="text-4xl font-bold line-height-1">{{ avg10.toFixed(1) }}</div>
           </div>
 
-          <div class="text-700">
-            Gemiddeld • {{ reviews.length }} review{{ reviews.length === 1 ? '' : 's' }}
+            <!--Stars / avg keep close-->
+          <div class="flex flex-column gap-1 md:ml-2 align-items-start" >
+              <!--Stars-->
+                <div class="flex gap-1" aria-hidden="true">
+                  <i
+                    v-for="i in 5"
+                    :key="i"
+                    :class="[
+                'pi',
+                i <= Math.round(avg5) ? 'pi-star-fill' : 'pi-star',
+                'text-900'
+              ]"/>
+              </div>
+              <!--  Average text              -->
+              <div class="text-700">
+                Gemiddeld • {{ reviews.length }} review{{ reviews.length === 1 ? '' : 's' }}
+              </div>
+            </div>
+
+
+          <!-- Right: platforms right side, we warp it on small -->
+          <div class="flex flex-wrap justify-content-start md:justify-content-end gap-2 w-full md:w-auto">
+            <div class="flex align-items-center gap-2 surface-50 border-1 border-200 border-round-lg px-2 py-2">
+                <img :src="homedeallogo" alt="Homedeal" class="h-3rem md:h-2rem w-auto" />
+                <span class="font-semibold text-700">{{ platformCount["Homedeal"] ?? 0 }}</span>
+            </div>
+
+            <div class="flex align-items-center gap-2 surface-50 border-1 border-200 border-round-lg px-2 py-2">
+                <img :src="ringtwicelogo" alt="Ring Twice" class="h-3rem md:h-2rem w-auto" />
+                <span class="font-semibold text-700">{{ platformCount["Ring Twice"] ?? 0 }}</span>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Right: platforms -->
-      <div class="flex flex-wrap align-items-center justify-content-start md:justify-content-end gap-2 w-full md:w-auto">
-        <div class="flex align-items-center gap-2 surface-50 border-1 border-200 border-round-lg px-2 py-2">
-          <img :src="homedeallogo" alt="Homedeal" class="h-2rem w-auto" />
-          <span class="font-semibold text-700">{{ platformCount["Homedeal"] ?? 0 }}</span>
         </div>
-
-        <div class="flex align-items-center gap-2 surface-50 border-1 border-200 border-round-lg px-2 py-2">
-          <img :src="ringtwicelogo" alt="Ring Twice" class="h-2rem w-auto" />
-          <span class="font-semibold text-700">{{ platformCount["Ring Twice"] ?? 0 }}</span>
-        </div>
-      </div>
-    </div>
+      </template>
+    </Card>
 
     <!-- Slider (Carousel) -->
-    <div class="reviews-carousel" v-if="reviews.length">
+    <div class="reviews-carousel col-12 md:col-12 lg:col-12" v-if="reviews.length">
       <Carousel
         :value="reviews"
         :numVisible="3"
         :numScroll="1"
         :responsiveOptions="responsiveOptions"
         :circular="reviews.length > 3"
-        :autoplayInterval="0"
+        :autoplayInterval="5000"
         :showIndicators="true"
         :showNavigators="reviews.length > 1"
         class="w-full"
@@ -177,7 +261,7 @@ function openExternal(url?: string) {
 
               <div class="mt-3 flex justify-content-between align-items-center gap-2">
                 <div class="text-700">
-                  Geschreven door <span class="font-semibold">{{ data.author }}</span>
+                  <span class="font-semibold">{{ data.author }}</span>
                   <span class="mx-2">•</span>
                   <span>{{ data.dataOfReview.toLocaleDateString('nl-BE', { year: 'numeric', month: 'long', day: 'numeric' }) }}</span>
                 </div>
@@ -194,8 +278,10 @@ function openExternal(url?: string) {
                   />
                 </div>
               </div>
-
-              <div v-if="data.reviewContent" class="mt-3 pt-3 border-top-1 border-200">
+          </template>
+<!-- TODO:Boootttm           -->
+          <template #footer class="">
+              <div v-if="data.reviewContent.quality != null && data.reviewContent.service != null && data.reviewContent.priceQualityRatio != null " class="mt-3 pt-3 border-top-1 border-200">
                 <div class="grid">
                   <div class="col-12 md:col-4 flex justify-content-between">
                     <span class="text-600">Kwaliteit</span>
@@ -220,7 +306,8 @@ function openExternal(url?: string) {
                   @click="openExternal(data.reviewContent.sourceUrl)"
                 />
               </div>
-            </template>
+          </template>
+
           </Card>
         </template>
 
