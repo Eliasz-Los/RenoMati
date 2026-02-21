@@ -138,6 +138,7 @@ const avg5 = computed(() => {
 const responsiveOptions = ref([
   { breakpoint: "1024px", numVisible: 2, numScroll: 1 },
   { breakpoint: "768px", numVisible: 1, numScroll: 1 },
+  { breakpoint: "480px", numVisible: 1, numScroll: 1 }
 ]);
 
 function platformLogo(p: PlatformType) {
@@ -220,7 +221,7 @@ function openExternal(url?: string) {
     </Card>
 
     <!-- Slider (Carousel) -->
-    <div class="reviews-carousel col-12 md:col-12 lg:col-12" v-if="reviews.length">
+    <div class="reviews-carousel w-full" v-if="reviews.length">
       <Carousel
         :value="reviews"
         :numVisible="3"
@@ -233,9 +234,9 @@ function openExternal(url?: string) {
         class="w-full"
       >
         <template #item="{ data }">
-          <Card class="border-round-xl overflow-hidden h-full">
+          <Card class="border-round-xl overflow-hidden h-full w-full">
             <template #content>
-              <div class="flex justify-content-between align-items-center gap-2">
+              <div class="flex flex-wrap justify-content-between align-items-center gap-2">
                 <div class="flex align-items-center gap-2">
                   <img
                     :src="platformLogo(data.platform)"
@@ -259,8 +260,8 @@ function openExternal(url?: string) {
                 {{ data.reviewContent.content }}
               </p>
 
-              <div class="mt-3 flex justify-content-between align-items-center gap-2">
-                <div class="text-700">
+              <div class="mt-3 flex flex-wrap justify-content-between align-items-center gap-2">
+                <div class="text-700 review-meta">
                   <span class="font-semibold">{{ data.author }}</span>
                   <span class="mx-2">•</span>
                   <span>{{ data.dataOfReview.toLocaleDateString('nl-BE', { year: 'numeric', month: 'long', day: 'numeric' }) }}</span>
@@ -281,7 +282,8 @@ function openExternal(url?: string) {
           </template>
 <!-- TODO:Boootttm           -->
           <template #footer class="">
-              <div v-if="data.reviewContent.quality != null && data.reviewContent.service != null && data.reviewContent.priceQualityRatio != null " class="mt-3 pt-3 border-top-1 border-200">
+              <div v-if="data.reviewContent.quality != null && data.reviewContent.service != null && data.reviewContent.priceQualityRatio != null "
+                   class="mt-3 pt-3 border-top-1 border-200">
                 <div class="grid">
                   <div class="col-12 md:col-4 flex justify-content-between">
                     <span class="text-600">Kwaliteit</span>
@@ -337,11 +339,45 @@ function openExternal(url?: string) {
   opacity: .8;
 }
 
+/*We oging to force carousel to never overflow horizontally as to not have problem on mobile with half a review card*/
+.reviews-carousel {
+  overflow-x: hidden;
+}
+
+.reviews-carousel :deep(.p-carousel-content),
+.reviews-carousel :deep(.p-carousel-items-content) {
+  overflow: hidden;
+}
+.reviews-carousel :deep(.p-card),
+.reviews-carousel :deep(.p-card-content),
+.reviews-carousel :deep(.p-carousel-item) {
+  min-width: 0;
+}
 
 .reviews-carousel :deep(.p-carousel-item) {
   padding: 0.75rem; /* ~ gap-3 */
+  box-sizing: border-box;
+}
+@media (max-width: 480px) {
+  .reviews-carousel :deep(.p-carousel-item) {
+    padding: 0.25rem;
+  }
 }
 
+/* prevent long text from forcing overflow */
+.review-meta {
+  min-width: 0;
+  flex: 1 1 auto;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* if any other text can be long */
+.reviews-carousel :deep(.p-card-content) {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 
 /* line clamp voor review tekst (PrimeFlex heeft dit niet standaard) */
 .clamp-4 {
@@ -350,4 +386,7 @@ function openExternal(url?: string) {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+
+
 </style>
