@@ -18,6 +18,7 @@
     "@formkit/vue": "^1.7.2",
     "@primevue/forms": "^4.5.4",
     "@primevue/themes": "^4.5.4",
+    "@sendgrid/mail": "^8.1.6",
     "formkit": "^1.7.2",
     "pinia": "^3.0.4",
     "primeflex": "^4.0.0",

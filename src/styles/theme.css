@@ -178,3 +178,42 @@ body {
 .rm-galleria-close-icon {
   color: #fff !important;
 }
+
+
+/*Multi form steppers from primvue annoyingly white background that doesnt change*/
+
+/* --- Kill the white panel background (panel area) --- */
+/* STEPper: remove white panel background */
+.rm-stepper .p-stepper-panels,
+.rm-stepper .p-stepper-content,
+.rm-stepper .p-steppanel {
+  background: transparent !important;
+  /*background-color: transparent !important;*/
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Remove padding "card feel" */
+.rm-stepper .p-stepper-panels,
+.rm-stepper .p-stepper-content {
+  padding: 0 !important;
+}
+
+/* Some themes put a surface background on the step panel root */
+.rm-stepper .p-steppanel {
+  padding: 0 !important; /* optional */
+}
+
+/* Keep your nav styling */
+.rm-stepper .p-stepper-nav {
+  border-radius: 20px;
+  padding: 0.75rem 1rem;
+}
+
+.rm-panel {
+  border-radius: 18px;
+  padding: 1rem;
+  background: rgba(255,255,255,0.55);   /* or transparent if you want */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(31,166,234,0.18);
+}

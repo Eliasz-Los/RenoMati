@@ -149,48 +149,7 @@ async function submitForm() {
 
 }
 
-/* --- Kill the white panel background (panel area) --- */
-.rm-stepper :deep(.p-stepper-panels),
-.rm-stepper :deep(.p-stepper-panel),
-.rm-stepper :deep(.p-stepper-panel-container),
-.rm-stepper :deep(.p-stepper-content) {
-  background-color: transparent !important;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-}
 
-/* Remove “card padding” feel around the panels */
-.rm-stepper :deep(.p-stepper-panels) {
-  padding: 0 !important;
-}
-
-/* If the theme adds spacing inside content */
-.rm-stepper :deep(.p-stepper-content) {
-  padding: 0 !important;
-}
-
-.rm-stepper :deep(.p-stepper-nav) {
-  border-radius: 20px;
-  padding: 0.75rem 1rem;
-}
-
-.rm-stepper :deep(.p-stepper-panels) {
-  border-radius: 20px;
-}
-
-.rm-stepper :deep(.p-component),
-.rm-stepper :deep([class*="surface"]) {
-  background-color: transparent !important;
-}
-
-.rm-panel {
-  border-radius: 18px;
-  padding: 1rem;
-  background: rgba(255,255,255,0.55);   /* or transparent if you want */
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(31,166,234,0.18);
-}
 .stepLabel {
   display: flex;
   align-items: center;
