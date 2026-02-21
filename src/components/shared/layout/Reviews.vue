@@ -280,7 +280,6 @@ function openExternal(url?: string) {
                 </div>
               </div>
           </template>
-<!-- TODO:Boootttm           -->
           <template #footer class="">
               <div v-if="data.reviewContent.quality != null && data.reviewContent.service != null && data.reviewContent.priceQualityRatio != null "
                    class="mt-3 pt-3 border-top-1 border-200">

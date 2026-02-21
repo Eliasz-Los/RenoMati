@@ -21,9 +21,9 @@ const galleryIndex = ref(0);
 <template>
   <div class="container m-2">
     <section class="hero">
-      <img rel="preload" src="@/assets/WindowsAndDoors/main_windows.jpg"
+      <img rel="preload" src="@/assets/main_windows_W1920.webp"
            alt ='windows with mountain background from Martin Woortman'
-           class="hero__img" fetchpriority="high"/>
+           class="hero__img" fetchpriority="high" decoding="async"/>
       <div class="hero__overlay">
         <AnimatedSection animation="fade-in" :delay="0.2">
           <h2 class="text-center hero__title">

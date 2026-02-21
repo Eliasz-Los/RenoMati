@@ -165,3 +165,16 @@ body {
   text-shadow: 0 8px 20px rgba(0,0,0,.35);
 }
 
+
+/*Galleria for showing multiple pictures in fullscreen, the exit button was badly visible because its wa whitish/transparent*/
+.rm-galleria-close {
+  background: rgba(220,38,38,.75) !important;
+  border-radius: 9999px !important;
+  border: none !important;
+}
+.rm-galleria-close:hover {
+  background: rgba(220,38,38,1) !important;
+}
+.rm-galleria-close-icon {
+  color: #fff !important;
+}

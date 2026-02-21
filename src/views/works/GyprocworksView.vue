@@ -30,9 +30,9 @@ const allImages = [...topCarousel, ...bottomCarousel]
   <div class="container m-2">
 
     <section class="hero">
-      <img rel="preload" src="@/assets/Gyprocworks/main_plaster_board.jpg"
+      <img src="@/assets/main_plaster_board_W1920.webp"
            alt="plasterboards from Brian Wangenheim" class="hero__img"
-      fetchpriority="high"/>
+      fetchpriority="high" decoding="async"/>
       <div class="hero__overlay">
         <AnimatedSection animation="fade-in" :delay="0.2">
           <h2 class="text-center hero__title">
